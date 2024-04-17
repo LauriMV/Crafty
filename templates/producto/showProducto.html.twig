@@ -1,0 +1,27 @@
+{% extends "producto/baseProducto.html.twig" %}
+{% block contenido %}
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h2>{{ producto.nombre }} Verde </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="{{ producto.imagen }}">
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">{{ producto.descripcion }} {{ producto.precio }} €</div>
+            </div>
+            <div class="row">
+                <ul>
+                    {% for categoria in producto.categorias %}
+                    <li>{{categoria.nombre}} </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
